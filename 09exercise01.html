@@ -11,8 +11,8 @@ function to find all the HTML comments in the body section
    <title>Hour 9 - Exercise 1</title>
   <script>
     function displayComments() {
-      var count = 0;
-      var htmlBody = document.getElementById("theDiv");
+      <!-- var count = 0; -->
+      <!-- var htmlBody = document.getElementById("theDiv");
       var htmlComments = htmlBody.getElementsByTagName("p");
       count = htmlComments.length;
       commentsCount = 0;
@@ -21,7 +21,14 @@ function to find all the HTML comments in the body section
           commentsCount++;
         }
       }
-      alert("The body contains " + commentsCount + " comments.")
+      alert("The body contains " + commentsCount + " comments.") -->
+      var c = document.body.childNodes;
+      var txt = "";
+      var i;
+      for (i = 0; i < c.length; i++) {
+          txt = txt + c[i].nodeName + "<br>";
+      }
+
     }
 //    window.onload = displayComments();
   </script>
@@ -42,5 +49,9 @@ function to find all the HTML comments in the body section
   <script>
     displayComments();
   </script>
+
+  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_nodename3">
+    w3schools</a>
+
  </body>
  </html>
