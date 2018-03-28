@@ -1,0 +1,46 @@
+<!--
+Using the nodeType information listed in Table 9.1, write a
+function to find all the HTML comments in the body section
+ of a page, and concatenate them into a single string.
+ Add some comments to the code listed in Listing 9.2;
+ then introduce and test your new function.
+-->
+
+ <html>
+ <head>
+   <title>Hour 9 - Exercise 1</title>
+  <script>
+    function displayComments() {
+      var count = 0;
+      var htmlBody = document.getElementById("theDiv");
+      var htmlComments = htmlBody.getElementsByTagName("p");
+      count = htmlComments.length;
+      commentsCount = 0;
+      for (var i = 0; i < htmlBody.childNodes.length; i++) {
+        if (htmlBody.childNodes[i].nodeType == 3) {
+          commentsCount++;
+        }
+      }
+      alert("The body contains " + commentsCount + " comments.")
+    }
+//    window.onload = displayComments();
+  </script>
+ </head>
+ <body id='theBody'>
+  <div id='theDiv'>
+    Some Text
+    <!-- display a todo list -->
+    <p><!-- display a todo list --></p>
+  </div>
+ 	<h1>Things To Do</h1>
+ 	<ol id="toDoList">
+ 		<li>Mow the lawn</li>
+ 		<li>Clean the windows</li>
+ 		<li>Answer your email</li>
+ 	</ol>
+ 	<p id="toDoNotes">Make sure all these are completed by 8pm so you can watch the game on TV!</p>
+  <script>
+    displayComments();
+  </script>
+ </body>
+ </html>
