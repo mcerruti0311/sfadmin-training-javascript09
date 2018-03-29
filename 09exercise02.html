@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Chapter 9, Exercise 2</title>
+  <script>
+    var newPara = document.createElement("p");
+    var myDiv = document.getElementById("div01");
+    var para2 = document.getElementById("para2");
+    myDiv.insertBefore(newPara, para2);
+  </script>
+</head>
+<body>
+  <p>
+    Having used the insertBefore() method, you might reasonably expect that <br>
+    there would be an insertAfter() method available. Unfortunately, that’s <br>
+    not so. Can you write an insertAfter() function to do this task? Use <br>
+    similar arguments to insertBefore(); that is, insertAfter(newNode, targetNode).<br>
+    (Hint: Use insertBefore() and the nextSibling property.)
+</p>
+<div id="div01">
+  <p id="para1">This paragraph contains some text.</p>
+  <p id="para2">Here's some more text.</p>
+</div>
+<div id="div02"></div>
+</body>
+</html>
