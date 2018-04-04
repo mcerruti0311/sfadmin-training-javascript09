@@ -1,57 +1,47 @@
-<!--
-Using the nodeType information listed in Table 9.1, write a
-function to find all the HTML comments in the body section
- of a page, and concatenate them into a single string.
- Add some comments to the code listed in Listing 9.2;
- then introduce and test your new function.
--->
+<html>
+  <head>
+  	<title>To-Do List</title>
+    <!-- The following script gets the comments for the
+      html element in constant testElement.
+    -->
+    <script>
+      function myFunction() {
+        <!-- Set constants  -->
+        let testElement = 'body';
+        let bodyElement = document.getElementsByTagName(testElement);
+        let childElement = bodyElement[0].childNodes;
 
- <html>
- <head>
-   <title>Hour 9 - Exercise 1</title>
-  <script>
-    function displayComments() {
-      <!-- var count = 0; -->
-      <!-- var htmlBody = document.getElementById("theDiv");
-      var htmlComments = htmlBody.getElementsByTagName("p");
-      count = htmlComments.length;
-      commentsCount = 0;
-      for (var i = 0; i < htmlBody.childNodes.length; i++) {
-        if (htmlBody.childNodes[i].nodeType == 3) {
-          commentsCount++;
+        <!-- Set variables -->
+        var count = 0;
+        var txt = "";
+        var com = "";
+
+        for (var i = 0; i < childElement.length; i++) {
+          txt += "Node Type: " + childElement[i].nodeType +
+          " Name:  " + childElement[i].nodeName + "<br>";
+          if(childElement[i].nodeType == 8) {
+            count++;
+            com += childElement[i].nodeValue + "<br>";
+          }
         }
+
+        document.getElementById("demo").innerHTML = txt;
+        document.getElementById("comments").innerHTML = com;
       }
-      alert("The body contains " + commentsCount + " comments.") -->
-      var c = document.body.childNodes;
-      var txt = "";
-      var i;
-      for (i = 0; i < c.length; i++) {
-          txt = txt + c[i].nodeName + "<br>";
-      }
-
-    }
-//    window.onload = displayComments();
-  </script>
- </head>
- <body id='theBody'>
-  <div id='theDiv'>
-    Some Text
-    <!-- display a todo list -->
-    <p><!-- display a todo list --></p>
-  </div>
- 	<h1>Things To Do</h1>
- 	<ol id="toDoList">
- 		<li>Mow the lawn</li>
- 		<li>Clean the windows</li>
- 		<li>Answer your email</li>
- 	</ol>
- 	<p id="toDoNotes">Make sure all these are completed by 8pm so you can watch the game on TV!</p>
-  <script>
-    displayComments();
-  </script>
-
-  <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_node_nodename3">
-    w3schools</a>
-
- </body>
- </html>
+      window.onload = myFunction;
+    </script>
+  </head>
+  <body id="theBody">
+  	<h1>Things To Do</h1>
+  	<ol id="toDoList">
+  		<li>Mow the lawn</li>
+  		<li>Clean the windows</li>
+  		<li>Answer your email</li>
+  	</ol>
+  	<p id="toDoNotes">Make sure all these are completed by 8pm so you can watch the game on TV!</p>
+  <!-- Here are the first comments -->
+  <p id="demo"></p>
+  <p id="comments"></p>
+  <!-- Here are the last comments -->
+  </body>
+</html>
