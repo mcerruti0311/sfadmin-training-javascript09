@@ -9,19 +9,17 @@
         <!-- Set constants  -->
         let testElement = 'body';
         let bodyElement = document.getElementsByTagName(testElement);
-        let ce = bodyElement[0].childNodes;
-
+        let childElement = bodyElement[0].childNodes;
         <!-- Set variables -->
         var count = 0;
         var txt = "";
         var com = "";
-
-        for (var i = 0; i < ce.length; i++) {
-          txt += "Node Type: " + ce[i].nodeType +
-          " Name:  " + ce[i].nodeName + "<br>";
-          if(ce[i].nodeType == 8) {
+        for (var i = 0; i < childElement.length; i++) {
+          txt += "Node Type: " + childElement[i].nodeType +
+          " Name:  " + childElement[i].nodeName + "<br>";
+          if(childElement[i].nodeType == 8) {
             count++;
-            com += ce[i].nodeValue + "<br>";
+            com += childElement[i].nodeValue + "<br>";
           }
         }
 
