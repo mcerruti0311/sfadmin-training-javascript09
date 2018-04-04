@@ -10,12 +10,10 @@
         let testElement = 'body';
         let bodyElement = document.getElementsByTagName(testElement);
         let childElement = bodyElement[0].childNodes;
-
         <!-- Set variables -->
         var count = 0;
         var txt = "";
         var com = "";
-
         for (var i = 0; i < childElement.length; i++) {
           txt += "Node Type: " + childElement[i].nodeType +
           " Name:  " + childElement[i].nodeName + "<br>";
