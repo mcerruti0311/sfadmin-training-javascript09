@@ -11,6 +11,9 @@
     myDiv.insertBefore(newPara, para2);
   }
   function mySibling() {
+      var newLi = document.createElement("li");
+      var newLiValue = document.createTextNode("Milk");
+      newLi.appendChild(newLiValue);
       var x = document.getElementById("item1").nextSibling.innerHTML;
       document.getElementById("div03").innerHTML = x;
   }
@@ -38,7 +41,10 @@
 
 <p>Example list:</p>
 
-<ul><li id="item1">Coffee (first li)</li><li id="item2">Tea (second li)</li></ul>
+<ul>
+  <li id="item1">Coffee (first li)</li>
+  <li id="item2">Tea (second li)</li>
+</ul>
 
 <input id='btn' value="Replace Paragraph" type='button'>
 <p>
