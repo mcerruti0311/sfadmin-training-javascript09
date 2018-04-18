@@ -2,7 +2,7 @@
   <head>
     <title>Proof of Concept</title>
     <script>
-
+      // function to demonstrate insertBefore
       function insertBeforeChildNodes() {
         // assigns the parent element by Id
         var olElement = document.getElementById("list");
@@ -17,21 +17,25 @@
        // inserts the new list item before child[1]
        olElement.insertBefore(newListElement, listItems[1]);
       }
-
+      // function to demonstrate a new method insertAfter
+      // using arguments like insertBefore 
       function insertAfter(fruit, itemNumber) {
         var olElement1 = document.getElementById("list");
         // creates an array of child elements for olElement
         var listItems1 = olElement1.getElementsByTagName("li");
-        var firstOne = listItems1[itemNumber];
-        // creates a new li element
-        var nextOne = firstOne.nextSibling;
-        var nextChild = nextOne.firstChild;
+        // creates child element from argument itemNumber
+        var firstOne = listItems1[itemNumber];  // Apples
+        // creates li element from nextSibling
+        var nextOne = firstOne.nextSibling;  // Bananas
+        // create new list element
         var newListElement1 = document.createElement("li");
+        // create text for new element
         var newListItem1 = document.createTextNode(fruit);
+        // add text element to list element
         newListElement1.appendChild(newListItem1);
-        olElement1.insertBefore(newListElement1, nextOne.nextSibling);
+        // insert new list element after item [itemNumber]
+        olElement1.insertBefore(newListElement1, nextOne);
       }
-
     </script>
 
   </head>
